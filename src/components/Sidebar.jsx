@@ -10,7 +10,7 @@ import { useStateContext } from '../contexts/ContextProvider'
 
 function Sidebar() {
 
-  const { activeMenu } = useStateContext();
+  const { activeMenu, setActiveMenu } = useStateContext();
 
   // const activeMenu = true;
   const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white  text-md m-2';
@@ -29,7 +29,7 @@ function Sidebar() {
           </Link>
 
           <TooltipComponent content="Menu" position="BottomCenter">
-            <button type='button' onClick={()=>{}} className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden">
+            <button type='button' onClick={()=>{setActiveMenu(false)}} className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden">
               <MdOutlineCancel />
             </button>
           </TooltipComponent>
@@ -43,7 +43,7 @@ function Sidebar() {
               {item.links.map((link)=>(
                 <NavLink 
                   key={link.name}
-                  onClick={() => {}}
+                  onClick={() => {setActiveMenu((prevActiveMenu) => !prevActiveMenu)}}
                   to={`/${link.name}`}
                   className={({isActive}) => isActive ? activeLink : normalLink}>
                     {link.icon}
