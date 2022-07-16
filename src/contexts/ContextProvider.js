@@ -9,6 +9,7 @@ const initialState = {
     notification: false
 }
 
+// set state 
 export const ContextProvider = ({children}) => {
     const [activeMenu, setActiveMenu] = useState(true);
 
@@ -19,6 +20,7 @@ export const ContextProvider = ({children}) => {
                 setActiveMenu: setActiveMenu
             }}
         >
+            {/* always need to return the children in order to update */}
             {children}
         </StateContext.Provider>
     )
