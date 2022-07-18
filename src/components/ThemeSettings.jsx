@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function ThemeSettings() {
-  return (
-    <div>ThemeSettings</div>
-  )
+  return <div>ThemeSettings</div>;
 }
 
-export default ThemeSettings
+export default ThemeSettings;
