@@ -12,7 +12,7 @@ import {
 import { employeesData, employeesGrid } from "../data/dummy";
 import { Header } from "../components";
 
-const Employees = () => {
+function Employees() {
   const toolbarOptions = ["Search"];
 
   const editing = { allowDeleting: true, allowEditing: true };
@@ -39,5 +39,5 @@ const Employees = () => {
       </GridComponent>
     </div>
   );
-};
+}
 export default Employees;
