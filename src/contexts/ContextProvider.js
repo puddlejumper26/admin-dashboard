@@ -18,9 +18,9 @@ export const ContextProvider = ({ children }) => {
   const [currentMode, setCurrentMode] = useState("Light");
   const [themeSettings, setThemeSettings] = useState(false);
 
-  const setMode = (mode) => {
-    setCurrentMode(mode);
-    localStorage.setItem("themeMode", mode);
+  const setMode = (e) => {
+    setCurrentMode(e.target.value);
+    localStorage.setItem("themeMode", e.target.value);
     setThemeSettings(false);
   };
 
