@@ -9,7 +9,7 @@ import { links } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
 function Sidebar() {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { activeMenu, setActiveMenu, currentColor } = useStateContext();
 
   // const activeMenu = true;
   const activeLink =
@@ -54,6 +54,9 @@ function Sidebar() {
                       setActiveMenu((prevActiveMenu) => !prevActiveMenu);
                     }}
                     to={`/${link.name}`}
+                    style={({ isActive }) => ({
+                      backgroundColor: isActive ? currentColor : "",
+                    })}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }
