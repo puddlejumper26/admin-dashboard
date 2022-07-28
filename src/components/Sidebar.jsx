@@ -50,9 +50,9 @@ function Sidebar() {
                 {item.links.map((link) => (
                   <NavLink
                     key={link.name}
-                    onClick={() => {
-                      setActiveMenu((prevActiveMenu) => !prevActiveMenu);
-                    }}
+                    // onClick={() => {
+                    //   setActiveMenu((prevActiveMenu) => !prevActiveMenu);
+                    // }}
                     to={`/${link.name}`}
                     style={({ isActive }) => ({
                       backgroundColor: isActive ? currentColor : "",
